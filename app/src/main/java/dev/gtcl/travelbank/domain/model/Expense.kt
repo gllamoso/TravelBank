@@ -9,7 +9,7 @@ data class Expense(
     val amount: Float,
     val attachments: List<Attachment>?,
     val date: String,
-    val expenseVenueTitle: String,
-    val currencyCode: String,
-    val tripBudgetCategory: String
+    val merchantTitle: String,
+    val currency: String,
+    val category: String
 ): Parcelable

@@ -17,13 +17,13 @@ data class ExpenseRemote(
 ) {
 
     fun toDomain() = Expense(
-        id,
-        amount,
-        attachments?.map { Attachment(it.mime, it.thumbnails.list, it.thumbnails.full) },
-        date,
-        expenseVenueTitle,
-        currencyCode,
-        tripBudgetCategory.capitalize(Locale.ROOT)
+        id = id,
+        amount = amount,
+        attachments = attachments?.map { Attachment(it.mime, it.thumbnails.list, it.thumbnails.full) },
+        date = date,
+        merchantTitle = expenseVenueTitle,
+        currency = currencyCode,
+        category = tripBudgetCategory.capitalize(Locale.ROOT)
     )
 
 }
