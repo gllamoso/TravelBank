@@ -6,10 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import dagger.hilt.android.AndroidEntryPoint
 import dev.gtcl.travelbank.R
 import dev.gtcl.travelbank.databinding.FragmentDetailsBinding
-import dev.gtcl.travelbank.databinding.FragmentListBinding
 
 class ExpenseDetailsFragment: Fragment(R.layout.fragment_details) {
 

@@ -1,7 +1,6 @@
 package dev.gtcl.travelbank
 
 import android.annotation.SuppressLint
-import android.text.SpannableString
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.net.toUri

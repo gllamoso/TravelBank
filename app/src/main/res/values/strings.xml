@@ -1,9 +1,5 @@
 <resources>
     <string name="app_name">TravelBank</string>
-    <string-array name="expense_categories">
-        <item>Meals</item>
-        <item>Other</item>
-    </string-array>
     <string name="expenses_title">Expenses</string>
     <string name="expense_details_title">Expense Details</string>
     <string name="total_label">Total</string>

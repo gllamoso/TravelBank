@@ -1,7 +1,6 @@
 package dev.gtcl.travelbank.repository
 
 import dev.gtcl.travelbank.data.network.service.ExpenseService
-import dev.gtcl.travelbank.domain.model.Expense
 import javax.inject.Inject
 
 class ExpenseRepositoryImpl @Inject constructor(
