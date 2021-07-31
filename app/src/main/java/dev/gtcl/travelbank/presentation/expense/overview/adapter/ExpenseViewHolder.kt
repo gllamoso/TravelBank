@@ -8,7 +8,7 @@ import dev.gtcl.travelbank.domain.model.Expense
 
 class ExpenseViewHolder private constructor(
     private val binding: ItemExpenseBinding
-    ): RecyclerView.ViewHolder(binding.root) {
+): RecyclerView.ViewHolder(binding.root) {
 
     fun bind(expense: Expense, expenseClickListener: ExpenseClickListener){
         binding.expense = expense

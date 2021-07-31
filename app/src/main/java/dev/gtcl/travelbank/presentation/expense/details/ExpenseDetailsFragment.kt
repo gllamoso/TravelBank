@@ -35,4 +35,5 @@ class ExpenseDetailsFragment: Fragment(R.layout.fragment_details) {
             }
         }
     }
+
 }

@@ -52,4 +52,5 @@ class ExpenseOverviewViewModel @Inject constructor(
     fun errorMessageObserved(){
         _errorMessage.value = null
     }
+
 }

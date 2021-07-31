@@ -16,4 +16,5 @@ class RecyclerViewListSizeAssertion(private val expectedCount: Int): ViewAsserti
         val adapter = recyclerView.adapter
         assert(adapter?.itemCount ?: 0 == expectedCount)
     }
+
 }

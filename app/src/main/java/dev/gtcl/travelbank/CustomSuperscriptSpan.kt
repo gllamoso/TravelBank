@@ -12,4 +12,5 @@ class CustomSuperscriptSpan : SuperscriptSpan() {
     override fun updateMeasureState(textPaint: TextPaint) {
         textPaint.baselineShift += ((1 * textPaint.ascent()) / 5).toInt()
     }
+
 }

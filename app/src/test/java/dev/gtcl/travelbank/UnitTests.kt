@@ -5,6 +5,7 @@ import org.junit.Test
 import org.junit.Assert.*
 
 class UnitTests {
+
     @Test
     fun convertRemoteDateToMonthAndDay_isMatching() {
         val remoteDateStr = "2021-07-13T00:00:00.000Z"
@@ -24,4 +25,5 @@ class UnitTests {
         val amount = 12345.1F
         assertEquals(amount.toDollars(), "$12,345.10")
     }
+
 }

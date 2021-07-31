@@ -111,6 +111,6 @@ class ListFragmentTest {
         onView(withRecyclerView(R.id.expense_list)
             .atPositionOnView(3, R.id.attachment_preview))
             .check(matches(not(isDisplayed())))
-
     }
+
 }

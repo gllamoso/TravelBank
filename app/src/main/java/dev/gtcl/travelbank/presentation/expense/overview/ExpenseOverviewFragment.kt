@@ -68,4 +68,5 @@ class ExpenseOverviewFragment: Fragment(R.layout.fragment_list), ExpenseClickLis
     override fun onClick(expense: Expense) {
         findNavController().navigate(ExpenseOverviewFragmentDirections.actionShowDetails(expense))
     }
+
 }

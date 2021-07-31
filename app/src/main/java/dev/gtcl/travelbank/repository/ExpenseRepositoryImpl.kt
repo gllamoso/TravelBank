@@ -8,4 +8,5 @@ class ExpenseRepositoryImpl @Inject constructor(
 ): ExpenseRepository {
 
     override suspend fun getExpenses() = expenseService.getExpenseList().map { it.toDomain() }
+
 }

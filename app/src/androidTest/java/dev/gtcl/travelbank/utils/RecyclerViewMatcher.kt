@@ -18,7 +18,7 @@ class RecyclerViewMatcher(private val recyclerViewId: Int) {
                 if (resources != null) {
                     idDescription = try {
                         resources!!.getResourceName(recyclerViewId)
-                    } catch (var4: Resources.NotFoundException) {
+                    } catch (e: Resources.NotFoundException) {
                         String.format(
                             "%s (resource name not found)",
                             recyclerViewId
@@ -31,10 +31,8 @@ class RecyclerViewMatcher(private val recyclerViewId: Int) {
             public override fun matchesSafely(view: View): Boolean {
                 resources = view.resources
                 if (childView == null) {
-                    val recyclerView: RecyclerView = view.rootView.findViewById(
-                        recyclerViewId
-                    )
-                    childView = if (recyclerView != null && recyclerView.id == recyclerViewId) {
+                    val recyclerView: RecyclerView = view.rootView.findViewById(recyclerViewId)
+                    childView = if (recyclerView.id == recyclerViewId) {
                         recyclerView.findViewHolderForAdapterPosition(position)!!.itemView
                     } else {
                         return false
@@ -49,4 +47,5 @@ class RecyclerViewMatcher(private val recyclerViewId: Int) {
             }
         }
     }
+
 }

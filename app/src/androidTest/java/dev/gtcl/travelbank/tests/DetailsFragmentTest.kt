@@ -84,4 +84,5 @@ class DetailsFragmentTest {
         onView(withId(R.id.currency)).check(matches(withText(currency)))
         onView(withId(R.id.attachment_preview)).check(matches(not(isDisplayed())))
     }
+
 }

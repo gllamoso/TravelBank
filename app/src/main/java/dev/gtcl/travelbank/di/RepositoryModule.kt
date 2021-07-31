@@ -17,4 +17,5 @@ abstract class RepositoryModule {
     abstract fun expenseRepositoryProvider(
         expenseRepositoryImpl: ExpenseRepositoryImpl
     ): ExpenseRepository
+
 }
