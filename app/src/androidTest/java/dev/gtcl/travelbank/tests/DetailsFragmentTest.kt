@@ -54,14 +54,21 @@ class DetailsFragmentTest {
 
     @Test
     fun testDetailsWithoutAttachment_isMatchingVisibilityAndText(){
+        // Expected Data
+        val expenseId = "123"
+        val amount = 12345F
+        val dateStr = "2021-07-13T00:00:00.000Z"
+        val title = "Breakfast"
+        val currency = "EUR"
+        val category = "Other"
         val expense = Expense(
-            "123",
-            10.0F,
+            expenseId,
+            amount,
             null,
-            "2021-07-13T00:00:00.000Z",
-            "Breakfast",
-            "USD",
-            "PerDiem"
+            dateStr,
+            title,
+            currency,
+            category
         )
 
         FragmentScenario.launchInContainer(
@@ -70,6 +77,11 @@ class DetailsFragmentTest {
             R.style.Theme_TravelBank
         )
 
+        onView(withId(R.id.merchant_title)).check(matches(withText(title)))
+        onView(withId(R.id.expense_amount)).check(matches(withText("$12,345.00")))
+        onView(withId(R.id.date)).check(matches(withText("Jul 13, 2021")))
+        onView(withId(R.id.category)).check(matches(withText(category)))
+        onView(withId(R.id.currency)).check(matches(withText(currency)))
         onView(withId(R.id.attachment_preview)).check(matches(not(isDisplayed())))
     }
 }
