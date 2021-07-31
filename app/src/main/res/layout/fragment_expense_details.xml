@@ -81,7 +81,7 @@
                 android:visibility="@{expense.attachments != null ? View.VISIBLE : View.GONE}"
                 android:background="@drawable/round_background"
                 android:layout_marginBottom="8dp"
-                app:imageUrlRoundedCorners="@{expense.attachments != null ? expense.attachments.get(0).thumbnailFull : null}"
+                app:imageUrlClipToOutline="@{expense.attachments != null ? expense.attachments.get(0).thumbnailFull : null}"
                 app:layout_constraintEnd_toEndOf="@id/currency"
                 app:layout_constraintTop_toTopOf="@id/merchant_title"
                 app:layout_constraintBottom_toBottomOf="@id/merchant_title"

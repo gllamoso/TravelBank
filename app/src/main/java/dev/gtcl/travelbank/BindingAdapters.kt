@@ -27,8 +27,8 @@ fun bindImage(imgView: ImageView, imgUrl: String?){
     }
 }
 
-@BindingAdapter("imageUrlRoundedCorners")
-fun bindImageWithRoundedCorners(imageView: ImageView, imgUrl: String?){
+@BindingAdapter("imageUrlClipToOutline")
+fun bindImageClipToOutline(imageView: ImageView, imgUrl: String?){
     imageView.clipToOutline = true
     bindImage(imageView, imgUrl)
 }
