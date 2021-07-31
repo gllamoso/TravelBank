@@ -1,4 +1,4 @@
-package dev.gtcl.travelbank.presentation.expense.overview.adapter
+package dev.gtcl.travelbank.presentation.expense.list.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

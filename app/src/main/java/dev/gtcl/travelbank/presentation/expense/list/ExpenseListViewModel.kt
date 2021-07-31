@@ -1,4 +1,4 @@
-package dev.gtcl.travelbank.presentation.expense.overview
+package dev.gtcl.travelbank.presentation.expense.list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

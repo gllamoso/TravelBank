@@ -4,8 +4,8 @@
 
     <data>
         <variable
-            name="expenseOverviewViewModel"
-            type="dev.gtcl.travelbank.presentation.expense.overview.ExpenseListViewModel" />
+            name="expenseListViewModel"
+            type="dev.gtcl.travelbank.presentation.expense.list.ExpenseListViewModel" />
         <import type="android.view.View"/>
     </data>
 
@@ -43,7 +43,7 @@
                     android:layout_marginHorizontal="8dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp"
-                    app:total="@{expenseOverviewViewModel.total}"
+                    app:total="@{expenseListViewModel.total}"
                     tools:text="Total: $12,345.65"/>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -54,7 +54,7 @@
                     android:overScrollMode="never"
                     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:spanCount="1"
-                    app:expenses="@{expenseOverviewViewModel.expenses}"
+                    app:expenses="@{expenseListViewModel.expenses}"
                     tools:listitem="@layout/item_expense"/>
 
             </androidx.appcompat.widget.LinearLayoutCompat>

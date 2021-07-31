@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import dev.gtcl.travelbank.domain.model.Expense
-import dev.gtcl.travelbank.presentation.expense.overview.adapter.ExpenseAdapter
+import dev.gtcl.travelbank.presentation.expense.list.adapter.ExpenseAdapter
 
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?){

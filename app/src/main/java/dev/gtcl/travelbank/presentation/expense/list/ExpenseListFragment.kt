@@ -1,4 +1,4 @@
-package dev.gtcl.travelbank.presentation.expense.overview
+package dev.gtcl.travelbank.presentation.expense.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,8 +12,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import dev.gtcl.travelbank.R
 import dev.gtcl.travelbank.databinding.FragmentExpenseListBinding
 import dev.gtcl.travelbank.domain.model.Expense
-import dev.gtcl.travelbank.presentation.expense.overview.adapter.ExpenseAdapter
-import dev.gtcl.travelbank.presentation.expense.overview.adapter.ExpenseClickListener
+import dev.gtcl.travelbank.presentation.expense.list.adapter.ExpenseAdapter
+import dev.gtcl.travelbank.presentation.expense.list.adapter.ExpenseClickListener
 
 @AndroidEntryPoint
 class ExpenseListFragment: Fragment(R.layout.fragment_expense_list), ExpenseClickListener {
@@ -35,7 +35,7 @@ class ExpenseListFragment: Fragment(R.layout.fragment_expense_list), ExpenseClic
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.apply {
-            expenseOverviewViewModel = viewModel
+            expenseListViewModel = viewModel
             lifecycleOwner = viewLifecycleOwner
             expenseList.adapter = ExpenseAdapter(this@ExpenseListFragment)
             swipeRefresh.setOnRefreshListener {
