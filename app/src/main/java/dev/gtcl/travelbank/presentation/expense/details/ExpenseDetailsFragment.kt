@@ -28,7 +28,6 @@ class ExpenseDetailsFragment: Fragment(R.layout.fragment_details) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        binding.invalidateAll()
         binding.toolbar.apply {
             setNavigationIcon(R.drawable.ic_close_24)
             setNavigationOnClickListener {
