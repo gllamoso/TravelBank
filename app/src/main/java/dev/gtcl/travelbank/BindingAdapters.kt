@@ -1,6 +1,9 @@
 package dev.gtcl.travelbank
 
 import android.annotation.SuppressLint
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.RelativeSizeSpan
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.net.toUri
@@ -43,4 +46,17 @@ fun bindExpenses(recyclerView: RecyclerView, expenses: List<Expense>?){
 fun bindTotal(textView: TextView, total: Float){
     val text = textView.context.getString(R.string.total_with_value, total)
     textView.text = text
+}
+
+@BindingAdapter("amount")
+fun bindAmount(textView: TextView, amount: Float){
+    textView.text = amount.toDollars()
+}
+
+@BindingAdapter("amountFormatted")
+fun bindAmountFormatted(textView: TextView, amount: Float){
+    textView.text = SpannableString(amount.toDollars()).apply {
+        setSpan(CustomSuperscriptSpan(), length - 3, length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        setSpan(RelativeSizeSpan(0.75f), length - 3, length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+    }
 }

@@ -1,8 +1,5 @@
 package dev.gtcl.travelbank
 
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.style.RelativeSizeSpan
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -20,9 +17,4 @@ fun convertRemoteDateToMonthAndDay(remoteDate: String): String{
     return MONTH_DAY_FORMAT.format(date)
 }
 
-fun Float.formatToDollars() = SpannableString(String.format("$%,.2f", this))
-
-fun Float.formatToDollarsWithSuperScript() = this.formatToDollars().apply {
-    setSpan(CustomSuperscriptSpan(), length - 3, length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-    setSpan(RelativeSizeSpan(0.75f), length - 3, length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-}
+fun Float.toDollars() = String.format("$%,.2f", this)
