@@ -29,7 +29,7 @@ class ListFragmentTest {
     }
 
     @Test
-    fun checkListContent(){
+    fun testListFragment_isMatchingVisibilityAndText(){
         onView(withId(R.id.expense_list)).check(hasSizeOf(4))
 
         // Expense 1
