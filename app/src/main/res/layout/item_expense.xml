@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="expense"
+            type="dev.gtcl.travelbank.domain.model.Expense" />
+        <import type="android.view.View"/>
+        <import type="dev.gtcl.travelbank.UtilKt"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="8dp"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="8dp"
+                android:paddingHorizontal="16dp">
+
+                <ImageView
+                    android:id="@+id/profile_thumbnail"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_profile_24"
+                    app:tint="@color/light_grey"/>
+
+                <TextView
+                    android:id="@+id/merchant_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:text="@{expense.expenseVenueTitle}"
+                    app:layout_constraintBottom_toBottomOf="@id/profile_thumbnail"
+                    app:layout_constraintStart_toEndOf="@id/profile_thumbnail"
+                    app:layout_constraintTop_toTopOf="@id/profile_thumbnail"
+                    tools:text="Lunch" />
+                
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:layout_marginTop="4dp"
+                    android:text="@{UtilKt.convertRemoteDateToMonthAndDay(expense.date)}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="Jul 9"
+                    />
+
+                <TextView
+                    android:id="@+id/amount_dollars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@{UtilKt.formatToDollarsWithSuperScript(expense.amount)}"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintTop_toBottomOf="@id/date"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="$1234.56"
+                    />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_grey"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/amount_dollars"/>
+
+                <TextView
+                    android:id="@+id/category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:background="@drawable/category_outline"
+                    android:paddingVertical="4dp"
+                    android:paddingHorizontal="8dp"
+                    android:textColor="@color/category_color"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:text="@{expense.tripBudgetCategory}"
+                    app:layout_constraintTop_toBottomOf="@id/divider"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="Meals"/>
+
+                <TextView
+                    android:id="@+id/currency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/category_outline"
+                    android:maxLines="1"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="4dp"
+                    android:visibility="@{expense.currencyCode.equalsIgnoreCase(&quot;USD&quot;) ? View.GONE : View.VISIBLE}"
+                    android:text="@{expense.currencyCode}"
+                    android:textColor="@color/category_color"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/currency_margin"
+                    app:layout_constraintTop_toBottomOf="@id/divider"
+                    tools:text="EUR" />
+
+                <View
+                    android:id="@+id/currency_margin"
+                    android:layout_width="8dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintEnd_toStartOf="@id/attachment_preview"
+                    app:layout_constraintTop_toBottomOf="@id/divider"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:visibility="@{expense.attachments != null ? View.VISIBLE : View.GONE}"/>
+
+                <ImageView
+                    android:id="@+id/attachment_preview"
+                    android:layout_width="48dp"
+                    android:layout_height="24dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="8dp"
+                    android:visibility="@{expense.attachments != null ? View.VISIBLE : View.GONE}"
+                    android:background="@drawable/round_background"
+                    app:imageUrlRoundedCorners="@{expense.attachments != null ? expense.attachments.get(0).thumbnailList : null}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:src="@tools:sample/backgrounds/scenic"/>
+                
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">TravelBank</string>
+    <string-array name="expense_categories">
+        <item>Meals</item>
+        <item>Other</item>
+    </string-array>
+    <string name="expenses_title">Expenses</string>
+    <string name="expense_details_title">Expense Details</string>
+    <string name="total_label">Total</string>
+    <string name="total_with_value">Total: $%,.2f</string>
+    <string name="merchant_label">Merchant</string>
+    <string name="date_label">Date</string>
+    <string name="category_label">Category</string>
+    <string name="description_hint">Description (Optional)</string>
+</resources>
