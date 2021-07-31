@@ -18,7 +18,7 @@ import org.junit.runner.RunWith
 class DetailsFragmentTest {
 
     @Test
-    fun testDetailsWithAttachment_viewsMatchingVisibilityAndText(){
+    fun testDetailsWithAttachment_isMatchingVisibilityAndText(){
         // Expected Data
         val expenseId = "123"
         val amount = 123.1F
