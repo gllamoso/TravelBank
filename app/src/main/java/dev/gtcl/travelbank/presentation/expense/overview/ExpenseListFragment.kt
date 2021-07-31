@@ -10,26 +10,26 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import dev.gtcl.travelbank.R
-import dev.gtcl.travelbank.databinding.FragmentListBinding
+import dev.gtcl.travelbank.databinding.FragmentExpenseListBinding
 import dev.gtcl.travelbank.domain.model.Expense
 import dev.gtcl.travelbank.presentation.expense.overview.adapter.ExpenseAdapter
 import dev.gtcl.travelbank.presentation.expense.overview.adapter.ExpenseClickListener
 
 @AndroidEntryPoint
-class ExpenseOverviewFragment: Fragment(R.layout.fragment_list), ExpenseClickListener {
+class ExpenseListFragment: Fragment(R.layout.fragment_expense_list), ExpenseClickListener {
 
-    private var _binding: FragmentListBinding? = null
-    private val binding: FragmentListBinding
+    private var _binding: FragmentExpenseListBinding? = null
+    private val binding: FragmentExpenseListBinding
         get() = requireNotNull(_binding)
 
-    private val viewModel: ExpenseOverviewViewModel by viewModels()
+    private val viewModel: ExpenseListViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentListBinding.inflate(inflater)
+        _binding = FragmentExpenseListBinding.inflate(inflater)
         return binding.root
     }
 
@@ -37,7 +37,7 @@ class ExpenseOverviewFragment: Fragment(R.layout.fragment_list), ExpenseClickLis
         binding.apply {
             expenseOverviewViewModel = viewModel
             lifecycleOwner = viewLifecycleOwner
-            expenseList.adapter = ExpenseAdapter(this@ExpenseOverviewFragment)
+            expenseList.adapter = ExpenseAdapter(this@ExpenseListFragment)
             swipeRefresh.setOnRefreshListener {
                 viewModel.fetchExpenses()
             }
@@ -66,7 +66,7 @@ class ExpenseOverviewFragment: Fragment(R.layout.fragment_list), ExpenseClickLis
     }
 
     override fun onClick(expense: Expense) {
-        findNavController().navigate(ExpenseOverviewFragmentDirections.actionShowDetails(expense))
+        findNavController().navigate(ExpenseListFragmentDirections.actionShowDetails(expense))
     }
 
 }

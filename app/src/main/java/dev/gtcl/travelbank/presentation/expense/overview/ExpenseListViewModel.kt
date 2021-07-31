@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ExpenseOverviewViewModel @Inject constructor(
+class ExpenseListViewModel @Inject constructor(
     private val expenseRepository: ExpenseRepository
 ): ViewModel() {
 

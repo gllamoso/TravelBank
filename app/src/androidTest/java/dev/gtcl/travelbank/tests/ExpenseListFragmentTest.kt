@@ -17,7 +17,7 @@ import org.junit.runner.RunWith
 
 
 @RunWith(AndroidJUnit4ClassRunner::class)
-class ListFragmentTest {
+class ExpenseListFragmentTest {
 
     // Fragment needs MainActivity to prevent crashes
     private lateinit var activityScenario: ActivityScenario<MainActivity>

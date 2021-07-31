@@ -1,13 +1,13 @@
 package dev.gtcl.travelbank
 
-import dev.gtcl.travelbank.tests.DetailsFragmentTest
-import dev.gtcl.travelbank.tests.ListFragmentTest
+import dev.gtcl.travelbank.tests.ExpenseDetailsFragmentTest
+import dev.gtcl.travelbank.tests.ExpenseListFragmentTest
 import org.junit.runner.RunWith
 import org.junit.runners.Suite
 
 @RunWith(Suite::class)
 @Suite.SuiteClasses(
-    DetailsFragmentTest::class,
-    ListFragmentTest::class
+    ExpenseDetailsFragmentTest::class,
+    ExpenseListFragmentTest::class
 )
 class TestSuite
