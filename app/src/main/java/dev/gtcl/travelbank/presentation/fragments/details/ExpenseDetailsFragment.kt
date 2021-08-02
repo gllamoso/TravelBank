@@ -36,4 +36,9 @@ class ExpenseDetailsFragment: Fragment(R.layout.fragment_expense_details) {
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        // Prevent memory leaks
+        _binding = null
+    }
 }
