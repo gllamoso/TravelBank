@@ -1,11 +1,11 @@
-package dev.gtcl.travelbank.presentation.expense.details
+package dev.gtcl.travelbank.presentation.fragments.details
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import dev.gtcl.travelbank.R
 import dev.gtcl.travelbank.databinding.FragmentExpenseDetailsBinding
 

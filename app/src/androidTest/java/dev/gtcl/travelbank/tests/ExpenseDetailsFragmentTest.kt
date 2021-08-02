@@ -9,7 +9,7 @@ import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import dev.gtcl.travelbank.R
 import dev.gtcl.travelbank.domain.model.Attachment
 import dev.gtcl.travelbank.domain.model.Expense
-import dev.gtcl.travelbank.presentation.expense.details.ExpenseDetailsFragment
+import dev.gtcl.travelbank.presentation.fragments.details.ExpenseDetailsFragment
 import org.hamcrest.CoreMatchers.not
 import org.junit.Test
 import org.junit.runner.RunWith

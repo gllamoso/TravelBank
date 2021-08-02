@@ -5,7 +5,7 @@
     <data>
         <variable
             name="expenseListViewModel"
-            type="dev.gtcl.travelbank.presentation.expense.list.ExpenseListViewModel" />
+            type="dev.gtcl.travelbank.presentation.fragments.list.ExpenseListViewModel" />
         <import type="android.view.View"/>
     </data>
 

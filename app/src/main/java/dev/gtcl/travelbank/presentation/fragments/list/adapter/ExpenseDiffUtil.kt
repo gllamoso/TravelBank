@@ -1,4 +1,4 @@
-package dev.gtcl.travelbank.presentation.expense.list.adapter
+package dev.gtcl.travelbank.presentation.fragments.list.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import dev.gtcl.travelbank.domain.model.Expense

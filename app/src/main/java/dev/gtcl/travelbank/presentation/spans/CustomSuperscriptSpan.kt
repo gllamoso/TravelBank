@@ -1,4 +1,4 @@
-package dev.gtcl.travelbank
+package dev.gtcl.travelbank.presentation.spans
 
 import android.text.TextPaint
 import android.text.style.SuperscriptSpan

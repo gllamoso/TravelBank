@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/expenseListFragment"
-        android:name="dev.gtcl.travelbank.presentation.expense.list.ExpenseListFragment"
+        android:name="dev.gtcl.travelbank.presentation.fragments.list.ExpenseListFragment"
         tools:layout="@layout/fragment_expense_list">
         <action
             android:id="@+id/action_showDetails"
@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/expenseDetailsFragment"
-        android:name="dev.gtcl.travelbank.presentation.expense.details.ExpenseDetailsFragment"
+        android:name="dev.gtcl.travelbank.presentation.fragments.details.ExpenseDetailsFragment"
         tools:layout="@layout/fragment_expense_details">
         <argument
             android:name="expense"
